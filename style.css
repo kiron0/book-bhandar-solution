@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
+
+*{
+  font-family: 'Montserrat', sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --off-black: hsl(0, 0%, 20%);
+  --gray: hsl(0, 0%, 50%);
+  --light-gray: hsl(0, 0%, 80%);
+  --rose: hsl(348, 100%, 73%);
+  --light-rose: hsl(348, 95%, 57%);
+  --naples-yellow: hsla(48, 85%, 62%, 1);
+  --medium-purple: hsla(242, 84%, 76%, 1);
+  --majorelle-blue: hsla(252, 89%, 62%, 1);
+  --transition-motion: all ease-in-out 300ms;
+  --bg-color:#e6e6e6;
+  --box-shadow:.4rem .4rem 1rem #ccc,
+                -.4rem -.4rem 1rem #fff;
+  --box-shadow-inset:.4rem .4rem 1rem #ccc inset,
+                      -.4rem -.4rem 1rem #fff inset;
+}
+
+body{
+    background-color: var(--bg-color);
+}
+
+#wishlist {
+  display: none;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+}
+
+#cart {
+  display: none;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+}
+
+header {
+  width: 80%;
+  height: 80px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header h1 {
+  font-weight: 500;
+  color: var(--majorelle-blue);
+  cursor: pointer;
+  transition: var(--transition-motion);
+}
+
+header h1:hover {
+  color: var(--off-black);
+  box-shadow: var(--box-shadow);
+  padding: 10px 15px;
+  border-radius: 10px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+}
+
+nav ul li {
+  margin-left: 25px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: var(--off-black);
+  transition: var(--transition-motion);
+}
+
+nav ul li:hover {
+  margin-left: 25px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: var(--medium-purple);
+  box-shadow: var(--box-shadow);
+  padding: 10px 15px;
+  border-radius: 10px;
+}
+
+.container{
+  width: 80%;
+  margin: 0 auto;
+}
+
+.books-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+  gap: 40px 20px;
+  margin: 50px 0;
+}
+
+.card {
+  height: 480px;
+  width: 320px;
+  padding: 10px;
+  border-radius: 12px;
+  background-color: var(--bg-color);
+  box-shadow: var(--box-shadow);
+}
+
+.image-container {
+  height: 300px;
+  width: 100%;
+  border-radius: 8px;
+  position: relative;
+  border: 1px solid var(--medium-purple);
+}
+
+.image-container img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 8px;
+}
+
+.info-container h1 {
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+
+.button-container {
+  position: absolute;
+  bottom: -18px;
+  right: 10px;
+}
+
+.button {
+  background-color: var(--majorelle-blue);
+  font-size: 1rem;
+  padding: 0.5em 1em;
+  border: none;
+  font-weight: 400;
+  cursor: pointer;
+  border-radius: 6px;
+  color: white;
+  margin-left: 5px;
+}
+
+@media screen and (max-width: 490px) {
+  header h1 {
+    font-size: 1.4rem;
+  }
+
+  nav ul li {
+    font-size: 1rem;
+  }
+
+  #wishlist {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  
+  #cart {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .books-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
